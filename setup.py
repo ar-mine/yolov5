@@ -5,7 +5,9 @@ INSTALL_REQUIRES = [
     "numpy >= 1.18.5",
     "opencv-python>=4.1.1",
     "pandas>=1.1.4",
-    "seaborn>=0.11.0"
+    "seaborn>=0.11.0",
+    "gdown",
+    "PyYAML"
     ]
 
 setup(
@@ -21,5 +23,11 @@ setup(
     # setuptools.find_packages can find all the packages in the directory
     packages=find_packages(),
 
-    install_requires=INSTALL_REQUIRES
+    install_requires=INSTALL_REQUIRES,
+
+    entry_points={
+            'console_scripts': [
+                'yolov5_download = yolov5.download:main'
+            ]
+        },
 )
