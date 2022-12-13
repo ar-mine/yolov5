@@ -25,14 +25,14 @@
 
 storage.googleapis.com
 runs/*
-data/*
-data/images/*
+yolov5/data/*
+yolov5/data/images/*
 !data/*.yaml
-!data/hyps
-!data/scripts
-!data/images
-!data/images/zidane.jpg
-!data/images/bus.jpg
+!yolov5/data/hyps
+!yolov5/data/scripts
+!yolov5/data/images
+!yolov5/data/images/zidane.jpg
+!yolov5/data/images/bus.jpg
 !data/*.sh
 
 results*.csv
