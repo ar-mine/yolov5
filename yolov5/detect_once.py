@@ -1,4 +1,4 @@
-import sys
+import os
 
 import numpy as np
 import torch
@@ -9,15 +9,13 @@ from yolov5.utils.plots import Annotator, colors
 from yolov5.utils.torch_utils import select_device, smart_inference_mode
 from yolov5.utils.augmentations import letterbox
 
-ROOT = "/home/armine/Codes/yolov5/yolov5/"  # relative
-if str(ROOT) not in sys.path:
-    sys.path.append(str(ROOT))
+ROOT = os.path.dirname(__file__)
 
 
 class YoloDetector:
-    def __init__(self):
-        self.weights = ROOT + 'models/best.pt'  # model path or triton URL
-        self.data = ROOT + 'data/lscd_2cls.yaml'  # dataset.yaml path
+    def __init__(self, model_name):
+        self.weights = os.path.join(ROOT, 'models', model_name+'.pt')  # model path or triton URL
+        self.data = os.path.join(ROOT, 'data', model_name+'.pt')  # dataset.yaml path
         self.conf_thres = 0.45  # confidence threshold
         self.iou_thres = 0.45  # NMS IOU threshold
         self.max_det = 1000  # maximum detections per image

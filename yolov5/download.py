@@ -12,7 +12,7 @@ def download(prefix, file_id, file_name):
     gdown.download(url, output, quiet=False)
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) < 2:
         print("Usage: python download.py model_name")
     with open(os.path.join(ROOT, "model_ids.yaml"), 'r', encoding="utf-8") as f:
@@ -26,6 +26,10 @@ if __name__ == "__main__":
         contains = data[sys.argv[1]]
         download('data', contains['data']['link'], contains['data']['file'])
         download('models', contains['models']['link'], contains['models']['file'])
+
+
+if __name__ == "__main__":
+    main()
 
 
 

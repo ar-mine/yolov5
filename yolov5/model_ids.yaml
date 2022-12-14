@@ -4,4 +4,4 @@ box_detection:
     file: box_detection_v1_0.yaml
   models:
     link: 1W8gU_vMzXYPu2EmchPC5NdYuv2nv8J0S
-    file: box_detection_v1_0.yaml
+    file: box_detection_v1_0.pt
