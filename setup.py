@@ -7,7 +7,9 @@ INSTALL_REQUIRES = [
     "pandas>=1.1.4",
     "seaborn>=0.11.0",
     "gdown",
-    "PyYAML"
+    "PyYAML",
+    "torch>=1.7.1",
+    "torchvision"
     ]
 
 setup(
